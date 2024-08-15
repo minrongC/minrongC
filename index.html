@@ -9,7 +9,7 @@
   <body>
     <div class="calculator">
       <form name="forms">
-        <!-- readonly 는 텍스트를 입력할 수 없도록 하는 속성 값 입니다. -->
+        <!-- readonly 는 input 태그에 텍스트를 입력할 수 없도록 하는 속성 값 입니다. -->
         <input type="text" name="output" readonly />
         <input
           type="button"
@@ -17,9 +17,14 @@
           value="c"
           onclick="document.forms.output.value=''"
         />
-        <input type="button" class="operator" value="/" />
-        <!-- document forms 밑에 있는 output(input태그의 name)의 value는 1이다.
-         value 뒤에 복합 된 연산자인 + 등호를 추가하면 클릭할때 마다 output에 해당하는 기호 추가 가능  -->
+        <input
+          type="button"
+          class="operator"
+          value="/"
+          onclick="document.forms.output.value+='/'"
+        />
+        <!-- document forms 밑에 있는 output(input태그의 name)의 value는 1이다(클릭하면 1을 표시하게 하라).
+         value 뒤에 복합 된 연산자인 " + "  등호를 추가하면 클릭할때 마다 output에 클릭한 기호 추가 가능  -->
         <input
           type="button"
           value="1"
