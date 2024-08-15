@@ -1,0 +1,76 @@
+/* 초기 값 설정입니다. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 계산기 바깥 배경색 , 화면 가운데, 수평과 수직, 중앙에 위치 할 수 있도록 설정합니다. 
+height : 100vh는 최소 높이를 설정하는 것 입니다. */
+body {
+  background-color: #1f1f1f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* 계산기 전체 테두리를 지정합니다. */
+.calculator {
+  width: 287px;
+  border: 1px solid #333;
+  background-color: #ccc;
+  padding: 5px;
+}
+
+/* div 태그 class calculator 아래 있는 form 태그를 말합니다. 
+그리드 속성으로 칸과 폭을 설정합니다.  */
+.calculator form {
+  display: grid;
+  grid-template-columns: repeat(4, 65px);
+  grid-auto-rows: 65px;
+  grid-gap: 5px;
+}
+
+/* calculator 클래스 아래 form 태그 아래 있는 모든 input 태그의 속성을 설정합니다.
+     cursor 속성을 이용해서 마우스가 올라가면 손가락 모양으로 변경합니다.*/
+.calculator form input {
+  border: 2px solid #333;
+  cursor: pointer;
+  font-size: 19px;
+}
+
+/* 마우스를 올렸을 떄 음영이 생기도록 하기 위해서 사용하는 태그입니다.*/
+.calculator form input:hover {
+  box-shadow: 1px 1px 2px #ffa7a7;
+}
+
+/* div태그의 class calculator 아래 있는  form태그 아래있는 class의 속성을 설정합니다.*/
+.calculator form .clear {
+  background-color: #ed4848;
+}
+
+.calculator form .operator {
+  background-color: orange;
+}
+
+.calculator form .dot {
+  background-color: green;
+}
+
+/*grid 컬럼을 사용해서 위치를 배열합니다.*/
+
+/*input태그 중 type이 text인 것 그리드 컬럼(grid-column)을 이용해서 4칸을 차지해라 */
+.calculator form input[type="text"] {
+  grid-column: span 4;
+}
+
+/* form 밑에 있는 class clear는 grid를 3칸 차지해라 */
+.calculator form .clear {
+  grid-column: span 3;
+}
+
+/* class operator_result는 grid를 2칸 차지해라 */
+.calculator form .operator_result {
+  grid-column: span 2;
+}
