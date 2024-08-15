@@ -60,9 +60,12 @@ body {
 
 /*grid 컬럼을 사용해서 위치를 배열합니다.*/
 
-/*input태그 중 type이 text인 것 그리드 컬럼(grid-column)을 이용해서 4칸을 차지해라 */
+/*input태그 중 type이 text인 것 그리드 컬럼(grid-column)을 이용해서 4칸을 차지해라 
+text를 우측정렬해라 */
 .calculator form input[type="text"] {
   grid-column: span 4;
+  text-align: right;
+  padding: 0 10px;
 }
 
 /* form 밑에 있는 class clear는 grid를 3칸 차지해라 */

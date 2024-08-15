@@ -9,24 +9,99 @@
   <body>
     <div class="calculator">
       <form name="forms">
-        <input type="text" name="output" />
-        <input type="button" class="clear" value="c" />
+        <!-- readonly 는 텍스트를 입력할 수 없도록 하는 속성 값 입니다. -->
+        <input type="text" name="output" readonly />
+        <input
+          type="button"
+          class="clear"
+          value="c"
+          onclick="document.forms.output.value=''"
+        />
         <input type="button" class="operator" value="/" />
-        <input type="button" value="1" />
-        <input type="button" value="2" />
-        <input type="button" value="3" />
-        <input type="button" class="operator" value="*" />
-        <input type="button" value="4" />
-        <input type="button" value="5" />
-        <input type="button" value="6" />
-        <input type="button" class="operator" value="+" />
-        <input type="button" value="7" />
-        <input type="button" value="8" />
-        <input type="button" value="9" />
-        <input type="button" class="operator" value="-" />
-        <input type="button" class="dot" value="." />
-        <input type="button" value="0" />
-        <input type="button" class="operator_result" value="=" />
+        <!-- document forms 밑에 있는 output(input태그의 name)의 value는 1이다.
+         value 뒤에 복합 된 연산자인 + 등호를 추가하면 클릭할때 마다 output에 해당하는 기호 추가 가능  -->
+        <input
+          type="button"
+          value="1"
+          onclick="document.forms.output.value+='1'"
+        />
+        <input
+          type="button"
+          value="2"
+          onclick="document.forms.output.value+='2'"
+        />
+        <input
+          type="button"
+          value="3"
+          onclick="document.forms.output.value+='3'"
+        />
+        <input
+          type="button"
+          class="operator"
+          value="*"
+          onclick="document.forms.output.value+='*'"
+        />
+        <input
+          type="button"
+          value="4"
+          onclick="document.forms.output.value+='4'"
+        />
+        <input
+          type="button"
+          value="5"
+          onclick="document.forms.output.value+='5'"
+        />
+        <input
+          type="button"
+          value="6"
+          onclick="document.forms.output.value+='6'"
+        />
+        <input
+          type="button"
+          class="operator"
+          value="+"
+          onclick="document.forms.output.value+='+'"
+        />
+        <input
+          type="button"
+          value="7"
+          onclick="document.forms.output.value+='7'"
+        />
+        <input
+          type="button"
+          value="8"
+          onclick="document.forms.output.value+='8'"
+        />
+        <input
+          type="button"
+          value="9"
+          onclick="document.forms.output.value+='9'"
+        />
+        <input
+          type="button"
+          class="operator"
+          value="-"
+          onclick="document.forms.output.value+='-'"
+        />
+        <input
+          type="button"
+          class="dot"
+          value="."
+          onclick="document.forms.output.value+='.'"
+        />
+        <input
+          type="button"
+          value="0"
+          onclick="document.forms.output.value+='0'"
+        />
+        <!-- 계산 된 결과를 구현하기 위해 eval 함수를 사용. 
+         입력되어져 있는 텍스트를 수식으로 계산되도록 변경되게 하고, 그 값을 다시 아웃풋에 할당합니다. -->
+        <input
+          type="button"
+          class="operator_result"
+          value="="
+          onclick="document.forms.output.value=eval(document.forms.output.value)"
+        />
       </form>
     </div>
   </body>
